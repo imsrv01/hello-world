@@ -1,1 +1,2 @@
 cat /etc/sysconfig/network-scripts/ifcfg-eth*
+netstat -nr
