@@ -15,6 +15,15 @@ def about(num):
 def names():
     return jsonify(name="a", lastname="b")
 
+@app.route('/test')
+def test():
+    response = requests.get('https://kubed-ixrvw4olfa-ue.a.run.app/status')
+    print('API resonse - ', response)
+    #print(response.text)
+    status = response.json()['status']
+    #status = 'hello'
+    return 'service completed with status {}'.format(status)
+
 @app.route('/display')
 def display():
     response = requests.get("http://127.0.0.1:8080/names")
